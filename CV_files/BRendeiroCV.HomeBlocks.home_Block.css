@@ -1,0 +1,80 @@
+﻿/* ====== HERO DO CV (topo) ====== */
+.cv-hero {
+  background: linear-gradient(180deg, var(--bg-0, #f6f8ff) 0%, var(--bg-1, #e9eefc) 100%);
+  border: 1px solid color-mix(in oklch, var(--primary, #3aa8ff) 10%, rgba(0,0,0,.08));
+  border-radius: 16px;
+  padding: clamp(16px, 4vw, 28px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* layout mobile-first */
+.cv-hero__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(12px, 3.5vw, 20px);
+  align-items: center;
+}
+
+/* avatar com glow subtil */
+.cv-hero .round-avatar,
+.cv-hero .cv-avatar,
+.cv-hero img[alt*="Bruno"] {
+  width: clamp(72px, 18vw, 150px);
+  height: clamp(72px, 18vw, 150px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in oklch, var(--primary, #3aa8ff) 35%, transparent);
+  box-shadow:
+    0 0 0 6px color-mix(in oklch, var(--primary, #3aa8ff) 8%, transparent),
+    0 6px 24px color-mix(in oklch, var(--primary, #3aa8ff) 14%, transparent);
+}
+
+/* títulos e subtítulos */
+.cv-hero .h1 { margin: 0 0 .25em; font-size: clamp(22px, 7cqi, 34px); }
+.cv-hero .subtitle { color: var(--muted, #6b7280); margin-bottom: .6em; }
+
+/* bloco das ações (coloca a ExtendedClass 'cv-actions' no container dos dois links) */
+.cv-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: .8rem;
+}
+
+/* botão primário “ghost” (Download CV) */
+.cv-actions a.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 14px;
+  min-height: 44px; /* tap target */
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklch, var(--primary, #3aa8ff) 45%, rgba(0,0,0,.1));
+  background: color-mix(in oklch, var(--primary, #3aa8ff) 10%, transparent);
+  color: var(--primary, #3aa8ff);
+  text-decoration: none; font-weight: 600;
+  transition: background .2s, box-shadow .2s, transform .08s;
+}
+.cv-actions a.btn-primary:hover {
+  background: color-mix(in oklch, var(--primary, #3aa8ff) 18%, transparent);
+  box-shadow: 0 8px 22px color-mix(in oklch, var(--primary, #3aa8ff) 22%, transparent);
+}
+.cv-actions a.btn-primary:active { transform: translateY(1px); }
+
+/* botão secundário (Contact Me) */
+.cv-actions a.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 14px; min-height: 44px;
+  border-radius: 12px;
+  border: 1px dashed color-mix(in oklch, var(--primary, #3aa8ff) 35%, rgba(0,0,0,.1));
+  color: color-mix(in oklch, var(--primary, #3aa8ff) 80%, var(--fg, #111723));
+  background: transparent; text-decoration: none; font-weight: 600;
+  transition: border-color .2s, color .2s, transform .08s;
+}
+.cv-actions a.btn-secondary:hover {
+  border-color: color-mix(in oklch, var(--primary, #3aa8ff) 60%, rgba(0,0,0,.1));
+  color: var(--primary, #3aa8ff);
+}
+.cv-actions a:focus-visible {
+  outline: 2px solid color-mix(in oklch, var(--primary, #3aa8ff) 70%, white);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/

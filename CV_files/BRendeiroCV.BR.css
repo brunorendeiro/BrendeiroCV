@@ -1,0 +1,424 @@
+﻿/* ===================================================================== */
+/*  The following CSS was created using Theme Editor.                    */
+/*  To modify this CSS, click "Open Theme Editor".                       */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  Root - CSS Variables                                                 */
+/* ===================================================================== */
+
+:root {
+	
+    /* Color - Brand */
+    --color-primary: #dc3023;
+    --color-secondary: #dc3023;
+
+    --color-primary-hover: #a5241a;
+    --color-primary-selected: rgba(220, 48, 35, .12);
+	
+    /* Dark Theme */
+    --background-dark-theme: rgba(255, 255, 255, .1);
+    --background-dark-theme-hover: rgba(255, 255, 255, .2);
+}
+
+
+:root {
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+   /* Neutros */
+  --color-neutral: oklch(92% 0.02 250);   /* cinza claro */
+  --color-neutral-dark: oklch(32% 0.02 250); /* cinza escuro */
+
+  /* Primário (mais neutro/futurista) */
+  --color-primary: oklch(75% 0.18 250);   /* azul elétrico */
+  --color-primary-hover: color-mix(in oklch, var(--color-primary) 80%, white);
+  --color-primary-selected: color-mix(in oklch, var(--color-primary) 25%, transparent);
+
+  /* Secundário (destaque, podes manter o vermelho) */
+  --color-secondary: oklch(65% 0.22 30); /* vermelho tomate */
+  --color-secondary-hover: color-mix(in oklch, var(--color-secondary) 70%, white);
+  --color-secondary-selected: color-mix(in oklch, var(--color-secondary) 25%, transparent);
+
+  /* Dark theme backgrounds */
+  --background-dark-theme: rgba(255, 255, 255, .06);
+  --background-dark-theme-hover: rgba(255, 255, 255, .12);
+  --card: var(--card, #ffffff);
+  --card-border: var(--card-border, rgba(0,0,0,.08));
+  --shadow-acc: var(--shadow, 0 8px 24px rgba(0,0,0,.06));
+  --primary: var(--primary, oklch(75% 0.18 250));
+  --fg: var(--fg, #111723);
+  --muted: var(--muted, #6b7280);
+  --cv-primary: oklch(75% 0.18 250);                   /* azul/ciano tech */
+  --cv-bg0: oklch(96% 0.01 250);
+  --cv-bg1: oklch(92% 0.02 250);
+  --cv-border: color-mix(in oklch, var(--cv-primary) 12%, rgba(0,0,0,.08));
+
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+
+a.link-underline {
+  position: relative;
+  color: oklch(75% 0.18 250); /* azul elétrico */
+  font-weight: 600;
+  text-decoration: none;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+a.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a.link-underline:hover {
+  color: color-mix(in oklch, oklch(75% 0.18 250) 60%, oklch(85% 0.25 330)); /* azul → magenta */
+}
+
+a.link-underline:hover::after {
+  width: 100%;
+}
+
+
+
+img.round-avatar{
+ border-radius: 50%;
+}
+img.round-avatar.comp{
+
+ width: 100px;
+}
+.dropdown-container:after {
+    display: none 
+}
+
+.ph.timeline-left {
+    width: 7%;
+}
+
+.tablet .layout-top .header-navigation,
+.phone .layout-top .header-navigation{
+  height:0vh;
+  left:0;
+  position:unset;
+  top:0;
+  z-index:var(--layer-global-navigation);
+  }
+
+.floating-overlay{
+  background-color: rgb(255 255 255 / 74%);
+}
+
+
+
+/* ===== Accordion OutSystems como "cards" 2025 ===== */
+
+/* Fallbacks rápidos (caso não tenhas as vars do tema) */
+
+
+/* Wrapper do componente */
+.osui-accordion {
+  border: 0;
+  background: transparent;
+  display: grid;
+  gap: 12px;                   /* espaço entre itens */
+}
+
+/* Cada item como "card" */
+.osui-accordion__item {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-acc);
+  overflow: clip;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .12s ease;
+}
+
+/* Hover do bloco inteiro */
+.osui-accordion__item:hover {
+  border-color: color-mix(in oklch, var(--primary) 18%, var(--card-border));
+  box-shadow: 0 10px 28px color-mix(in oklch, var(--primary) 10%, transparent);
+}
+
+/* Header do item (o botão) */
+.osui-accordion__header {
+  display: grid;
+  grid-template-columns: 1fr auto; /* título | ícone */
+  align-items: center;
+  padding: clamp(14px, 2.2vw, 20px) clamp(16px, 2.4vw, 24px);
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--fg);
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background .2s ease;
+}
+
+.osui-accordion__header:hover {
+  background: color-mix(in oklch, var(--primary) 6%, transparent);
+}
+
+/* Título e subtítulo (se existirem) */
+.osui-accordion__header .heading, 
+.osui-accordion__header h3, 
+.osui-accordion__header h4 {
+  margin: 0;
+  font-size: clamp(17px, 2.6cqi, 20px);
+  font-weight: 700;
+  color: var(--fg);
+}
+.osui-accordion__header .sub {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+/* Ícone/chevron – rodar ao abrir */
+.osui-accordion__icon,
+.osui-accordion__header .icon,
+.osui-accordion__header svg {
+  transition: transform .25s ease;
+}
+
+/* Estados abertos (cobrir diferentes variantes do OSUI) */
+.osui-accordion__item.is--open .osui-accordion__header svg,
+.osui-accordion__header[aria-expanded="true"] svg,
+.osui-accordion__header[aria-expanded="true"] .icon,
+.osui-accordion__item[aria-expanded="true"] .osui-accordion__icon {
+  transform: rotate(180deg);
+}
+
+/* Conteúdo com animação suave */
+.osui-accordion__content {
+  padding: 0 clamp(16px, 2.4vw, 24px) clamp(16px, 2.2vw, 22px);
+  color: var(--fg);
+  animation: acc-in .18s ease-out;
+}
+@keyframes acc-in { from { opacity:.7; transform: translateY(-2px); } to { opacity:1; transform:none; } }
+
+/* Divisórias internas mais discretas */
+.osui-accordion__content hr {
+  border: 0;
+  height: 1px;
+  background: color-mix(in oklch, var(--primary) 10%, rgba(0,0,0,.08));
+  margin: 12px 0;
+}
+
+/* Foco acessível (teclado) */
+.osui-accordion__header:focus-visible {
+  outline: 2px solid color-mix(in oklch, var(--primary) 70%, white);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Interação móvel: toque */
+.osui-accordion__header, .osui-accordion__item { touch-action: manipulation; }
+
+/* Estado "realçado" opcional (podes aplicar via ExtendedClass) */
+.osui-accordion__item.highlight {
+  border-color: color-mix(in oklch, var(--primary) 28%, var(--card-border));
+  box-shadow: 0 12px 36px color-mix(in oklch, var(--primary) 16%, transparent);
+}
+
+/* Card + gradiente no item */
+.osui-accordion .osui-accordion-item{
+  background: linear-gradient(180deg, var(--cv-bg0) 0%, var(--cv-bg1) 100%) !important;
+  border: 1px solid var(--cv-border) !important;
+  border-radius: var(--border-radius-soft) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
+  overflow: clip;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .08s ease;
+}
+
+/* Hover subtil do card */
+.osui-accordion .osui-accordion-item:hover{
+  border-color: color-mix(in oklch, var(--cv-primary) 20%, var(--cv-border));
+  box-shadow: 0 14px 34px color-mix(in oklch, var(--cv-primary) 12%, rgba(0,0,0,.08));
+}
+
+/* Barra de acento quando aberto (usa o ::after original do OSUI) */
+.osui-accordion-item--is-open::after{
+  border-color: var(--cv-primary) !important;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+/* Header – mantém layout, dá “tap target” e hover */
+.osui-accordion-item__title{
+  padding: var(--space-m) !important;
+  padding-bottom: 0px !important;
+  line-height: 1.2 !important;
+  gap: var(--space-s);
+  transition: background .2s ease;
+}
+
+
+/* Títulos */
+.osui-accordion-item__title__placeholder{
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* Ícone (caret/plus-minus) – cor + rotação já existe, só afinamos cor/hover */
+.osui-accordion-item__icon{
+  color: var(--cv-primary) !important;
+  transition: color .25s ease, transform .25s ease;
+}
+.osui-accordion-item--is-open > .osui-accordion-item__title > .osui-accordion-item__icon{
+  color: var(--cv-primary) !important;
+}
+
+/* Conteúdo: respiro e animação suave (mantém as classes do OSUI) */
+.osui-accordion-item__content{
+  padding: var(--space-none) var(--space-m) var(--space-m) !important;
+  animation: acc-in-2025 .18s ease-out;
+}
+@keyframes acc-in-2025{
+  from{ opacity:.85; transform: translateY(-2px); }
+  to{ opacity:1; transform:none; }
+}
+
+/* Foco acessível */
+.has-accessible-features .osui-accordion-item__title:focus-visible{
+  outline: 2px solid color-mix(in oklch, var(--cv-primary) 70%, white);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+
+/* ===== Popup 2025 — vidro/gradiente, dark-mode, animações seguras ===== */
+
+
+/* Backdrop com blur e opacidade agradável */
+[data-popup-backdrop],
+.popup-backdrop{
+  background: color-mix(in oklch, black 40%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Dialog “glassmorphism” + gradiente suave */
+.popup-dialog{
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--cv-bg0) 85%, transparent) 0%, var(--cv-bg1) 100%),
+    rgba(255,255,255,0.06);
+  color: var(--cv-fg);
+  border: 1px solid var(--cv-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.28) !important;
+
+  /* mobile-first */
+  width: min(92vw, 560px) !important;
+  max-width: 560px !important;
+  margin: clamp(12px, 4vw, 24px) auto !important;
+  padding: clamp(14px, 3.5vw, 22px) !important;
+
+  /* animação de entrada */
+  transform: translateY(6px) scale(.98);
+  opacity: 0;
+  animation: popup-in .22s ease-out forwards;
+}
+
+/* animação */
+@keyframes popup-in{
+  to { transform: none; opacity: 1; }
+}
+
+/* reduzir movimento se necessário */
+@media (prefers-reduced-motion: reduce){
+  .popup-dialog{ animation: none; transform: none; opacity: 1; }
+}
+
+/* Cabeçalho e título (genérico) */
+.popup-dialog header,
+.popup-header{
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 10px;
+}
+.popup-title, .popup-dialog h3, .popup-dialog h2{
+  margin: 0;
+  font-size: clamp(18px, 3.6cqi, 22px);
+  font-weight: 700;
+}
+
+/* Botão fechar (se tiveres um X dentro do header) */
+.popup-close, .popup-dialog .btn-close, .popup-dialog [aria-label="Close"]{
+  margin-left: auto;
+  inline-size: 36px; block-size: 36px;
+  display: grid; place-items: center;
+  border-radius: 10px; border: 1px solid color-mix(in oklch, var(--cv-primary) 25%, transparent);
+  background: color-mix(in oklch, var(--cv-primary) 8%, transparent);
+  color: var(--cv-fg);
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s;
+}
+.popup-close:hover,
+.popup-dialog .btn-close:hover{
+  background: color-mix(in oklch, var(--cv-primary) 16%, transparent);
+  box-shadow: 0 8px 20px color-mix(in oklch, var(--cv-primary) 20%, transparent);
+}
+.popup-close:focus-visible{ outline: 2px solid color-mix(in oklch, var(--cv-primary) 70%, white); outline-offset: 3px; }
+
+/* Corpo do popup */
+.popup-body, .popup-dialog > .content, .popup-dialog .popup-content{
+  margin-top: 6px;
+  display: grid; gap: 10px;
+  color: var(--cv-fg);
+}
+
+/* Footer com ações */
+.popup-footer, .popup-actions{
+  margin-top: 14px;
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
+}
+
+/* Botões */
+.popup-actions .btn-primary, .popup-dialog .btn-primary{
+  padding: 10px 14px; min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklch, var(--cv-primary) 45%, rgba(0,0,0,.1));
+  background: color-mix(in oklch, var(--cv-primary) 14%, transparent);
+  color: var(--cv-primary); font-weight: 600; text-decoration: none;
+  transition: background .2s, box-shadow .2s, transform .08s;
+}
+.popup-actions .btn-primary:hover{ background: color-mix(in oklch, var(--cv-primary) 22%, transparent); box-shadow: 0 8px 22px color-mix(in oklch, var(--cv-primary) 22%, transparent); }
+.popup-actions .btn-primary:active{ transform: translateY(1px); }
+
+.popup-actions .btn-secondary, .popup-dialog .btn-secondary{
+  padding: 10px 14px; min-height: 44px;
+  border-radius: 12px;
+  border: 1px dashed color-mix(in oklch, var(--cv-primary) 35%, rgba(0,0,0,.1));
+  background: transparent; color: color-mix(in oklch, var(--cv-primary) 80%, var(--cv-fg));
+  font-weight: 600; text-decoration: none; transition: border-color .2s, color .2s;
+}
+.popup-actions .btn-secondary:hover{ border-color: color-mix(in oklch, var(--cv-primary) 60%, rgba(0,0,0,.1)); color: var(--cv-primary); }
+
+/* Foco acessível geral */
+.popup-dialog :where(a,button,input,select,textarea):focus-visible{
+  outline: 2px solid color-mix(in oklch, var(--cv-primary) 70%, white);
+  outline-offset: 3px; border-radius: 10px;
+}
+
+/* Em ecrãs muito pequenos, usa 96vw e reduz padding */
+@media (max-width: 360px){
+  .popup-dialog{ width: 96vw !important; padding: 12px !important; }
+}
+
+
+
+
+
