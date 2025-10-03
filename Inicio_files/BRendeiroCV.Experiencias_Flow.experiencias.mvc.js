@@ -1,4 +1,4 @@
-﻿define("BRendeiroCV.Experiencias_Flow.experiencias.mvc$model", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.Experiencias_Flow.exeperienciaTrilogy.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaBabel.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaCapgemnini.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaNoesis.mvc$model"], function (OutSystems, BRendeiroCVModel, BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvcModel) {
+﻿define("BRendeiroCV.Experiencias_Flow.experiencias.mvc$model", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.Experiencias_Flow.exeperienciaTrilogy.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaBabel.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaCapgemnini.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaNoesis.mvc$model", "BRendeiroCV.Experiencias_Flow.exeperienciaAgap.mvc$model"], function (OutSystems, BRendeiroCVModel, BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvcModel, BRendeiroCV_Experiencias_Flow_exeperienciaAgap_mvcModel) {
 var OS = OutSystems.Internal;
 
 
@@ -41,7 +41,7 @@ enumerable: true,
 configurable: true,
 get: function () {
 if((Model._hasValidationWidgetsValue === undefined)) {
-Model._hasValidationWidgetsValue = (((BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvcModel.hasValidationWidgets || BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvcModel.hasValidationWidgets) || BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvcModel.hasValidationWidgets) || BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvcModel.hasValidationWidgets);
+Model._hasValidationWidgetsValue = ((((BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvcModel.hasValidationWidgets || BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvcModel.hasValidationWidgets) || BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvcModel.hasValidationWidgets) || BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvcModel.hasValidationWidgets) || BRendeiroCV_Experiencias_Flow_exeperienciaAgap_mvcModel.hasValidationWidgets);
 }
 
 return Model._hasValidationWidgetsValue;
@@ -54,7 +54,7 @@ return Model;
 })(OS.Model.VariablelessViewModel);
 return new OS.Model.ModelFactory(Model, "Experiencias_Flow.experiencias");
 });
-define("BRendeiroCV.Experiencias_Flow.experiencias.mvc$view", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.controller", "react", "OutSystems/ReactView/Main", "BRendeiroCV.Experiencias_Flow.experiencias.mvc$model", "BRendeiroCV.Experiencias_Flow.experiencias.mvc$controller", "BRendeiroCV.clientVariables", "OutSystems/ReactWidgets/Main", "BRendeiroCV.Experiencias_Flow.exeperienciaTrilogy.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaBabel.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaCapgemnini.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaNoesis.mvc$view"], function (OutSystems, BRendeiroCVModel, BRendeiroCVController, React, OSView, BRendeiroCV_Experiencias_Flow_experiencias_mvc_model, BRendeiroCV_Experiencias_Flow_experiencias_mvc_controller, BRendeiroCVClientVariables, OSWidgets, BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvc_view) {
+define("BRendeiroCV.Experiencias_Flow.experiencias.mvc$view", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.controller", "react", "OutSystems/ReactView/Main", "BRendeiroCV.Experiencias_Flow.experiencias.mvc$model", "BRendeiroCV.Experiencias_Flow.experiencias.mvc$controller", "BRendeiroCV.clientVariables", "OutSystems/ReactWidgets/Main", "BRendeiroCV.Experiencias_Flow.exeperienciaTrilogy.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaBabel.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaCapgemnini.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaNoesis.mvc$view", "BRendeiroCV.Experiencias_Flow.exeperienciaAgap.mvc$view"], function (OutSystems, BRendeiroCVModel, BRendeiroCVController, React, OSView, BRendeiroCV_Experiencias_Flow_experiencias_mvc_model, BRendeiroCV_Experiencias_Flow_experiencias_mvc_controller, BRendeiroCVClientVariables, OSWidgets, BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaAgap_mvc_view) {
     var OS = OutSystems.Internal;
 var PlaceholderContent = OSView.Widget.PlaceholderContent;
 var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
@@ -86,7 +86,7 @@ var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
             return [];
         };
         View.getBlocks = function() {
-            return [BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvc_view];
+            return [BRendeiroCV_Experiencias_Flow_exeperienciaTrilogy_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaBabel_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaCapgemnini_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaNoesis_mvc_view, BRendeiroCV_Experiencias_Flow_exeperienciaAgap_mvc_view];
         };
         Object.defineProperty(View.prototype, "modelFactory", {
             get: function () {
@@ -230,6 +230,33 @@ alias: "4"
 },
 _widgetRecordProvider: widgetsRecordProvider,
 _dependencies: []
+})), React.createElement(OSWidgets.Container, {
+align: /*Default*/ 0,
+animate: false,
+style: "flex2",
+visible: true,
+_idProps: {
+service: idService,
+uuid: "8"
+},
+_widgetRecordProvider: widgetsRecordProvider
+}, React.createElement(BRendeiroCV_Experiencias_Flow_exeperienciaAgap_mvc_view, {
+inputs: {},
+events: {
+_handleError: function (ex) {
+controller.handleError(ex);
+}
+},
+_validationProps: {
+validationService: validationService
+},
+_idProps: {
+service: idService,
+uuid: "9",
+alias: "5"
+},
+_widgetRecordProvider: widgetsRecordProvider,
+_dependencies: []
 })));
         };
         return View;
@@ -262,7 +289,7 @@ Controller.prototype.dataFetchActionNames = [];
 Controller.prototype.pushDebuggerContext = function (callContext) {
 var varBag = {};
 OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:wJ+9upxlB0qhN6v634KrBQ:/NRWebFlows.wJ+9upxlB0qhN6v634KrBQ:lT52hO3o4DXO_WqYZjpTLg", "BRendeiroCV", "Experiencias_Flow", "NRFlows.WebFlow", callContext.id, varBag);
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:_20iVAGdikOmxwfJosWpaw:/NRWebFlows.wJ+9upxlB0qhN6v634KrBQ/NodesShownInESpaceTree._20iVAGdikOmxwfJosWpaw:jBrF8S3Rqo83ybmMBo6ScA", "BRendeiroCV", "experiencias", "NRNodes.WebBlock", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:_20iVAGdikOmxwfJosWpaw:/NRWebFlows.wJ+9upxlB0qhN6v634KrBQ/NodesShownInESpaceTree._20iVAGdikOmxwfJosWpaw:igGVbqSBI8SXSWx9jBwBDg", "BRendeiroCV", "experiencias", "NRNodes.WebBlock", callContext.id, varBag);
 };
 Controller.prototype.popDebuggerContext = function (callContext) {
 OutSystemsDebugger.pop("g9ft1tpO+kSkuYaBgMIb5w:_20iVAGdikOmxwfJosWpaw", callContext.id);

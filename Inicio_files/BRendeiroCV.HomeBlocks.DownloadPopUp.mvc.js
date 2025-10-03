@@ -168,7 +168,7 @@ animate: false,
 extendedProperties: {
 style: "text-align: center;"
 },
-style: "margin-top-l",
+style: "margin-y-l",
 visible: true,
 _idProps: {
 service: idService,
@@ -323,7 +323,7 @@ return controller.safeExecuteClientAction(controller._onClick_Minimalist$Action,
 Controller.prototype.pushDebuggerContext = function (callContext) {
 var varBag = {};
 OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:_5ioy9kobke2cz+EnQWZ8w:/NRWebFlows._5ioy9kobke2cz+EnQWZ8w:KPgf0Vr1eymcEDPaRk1wxA", "BRendeiroCV", "HomeBlocks", "NRFlows.WebFlow", callContext.id, varBag);
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:IktKxiZXtkiHhMwvvYbUCw:/NRWebFlows._5ioy9kobke2cz+EnQWZ8w/NodesShownInESpaceTree.IktKxiZXtkiHhMwvvYbUCw:Cv1D14l7zx8gawvi857jhg", "BRendeiroCV", "DownloadPopUp", "NRNodes.WebBlock", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:IktKxiZXtkiHhMwvvYbUCw:/NRWebFlows._5ioy9kobke2cz+EnQWZ8w/NodesShownInESpaceTree.IktKxiZXtkiHhMwvvYbUCw:hZtJnn7SjDv0YEEa3YdZbw", "BRendeiroCV", "DownloadPopUp", "NRNodes.WebBlock", callContext.id, varBag);
 };
 Controller.prototype.popDebuggerContext = function (callContext) {
 OutSystemsDebugger.pop("g9ft1tpO+kSkuYaBgMIb5w:IktKxiZXtkiHhMwvvYbUCw", callContext.id);

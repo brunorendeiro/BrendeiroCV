@@ -87,7 +87,7 @@ var IteratorPlaceholderContent = OSView.Widget.IteratorPlaceholderContent;
         };
         View.displayName = "MainFlow.Home";
         View.getCssDependencies = function() {
-            return ["css/OutSystemsReactWidgets.css", "css/OutSystemsUI.OutSystemsUI.css", "css/BRendeiroCV.BR.css", "css/BRendeiroCV.BR.extra.css"];
+            return ["css/OutSystemsReactWidgets.css", "css/OutSystemsUI.OutSystemsUI.css", "css/BRendeiroCV.BRendeiroCV.css", "css/BRendeiroCV.BRendeiroCV.extra.css"];
         };
         View.getJsDependencies = function() {
             return [];
@@ -965,6 +965,7 @@ animate: false,
 extendedProperties: {
 style: "align-items: center; display: flex; height: 100vh; justify-content: center; text-align: center;"
 },
+style: "iconImage",
 visible: true,
 _idProps: {
 service: idService,
@@ -974,24 +975,36 @@ _widgetRecordProvider: widgetsRecordProvider
 }, React.createElement(OSWidgets.Container, {
 align: /*Default*/ 0,
 animate: false,
-style: "spinner",
 visible: true,
 _idProps: {
 service: idService,
 uuid: "53"
 },
 _widgetRecordProvider: widgetsRecordProvider
-}, React.createElement(OSWidgets.Icon, {
-icon: "spinner",
-iconSize: /*Twotimes*/ 1,
-style: "icon",
+}, React.createElement(OSWidgets.Container, {
+align: /*Default*/ 0,
+animate: false,
+style: "spinner",
 visible: true,
 _idProps: {
 service: idService,
 uuid: "54"
 },
 _widgetRecordProvider: widgetsRecordProvider
-})))];
+}, React.createElement(OSWidgets.Icon, {
+extendedProperties: {
+style: "color: #fff; font-size: 100px;"
+},
+icon: "spinner",
+iconSize: /*Twotimes*/ 1,
+style: "icon",
+visible: true,
+_idProps: {
+service: idService,
+uuid: "55"
+},
+_widgetRecordProvider: widgetsRecordProvider
+}))))];
 }));
         };
         return View;
@@ -999,7 +1012,7 @@ _widgetRecordProvider: widgetsRecordProvider
 	
     return View;
 });
-define("BRendeiroCV.MainFlow.Home.mvc$controller", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.controller", "BRendeiroCV.languageResources", "BRendeiroCV.clientVariables", "BRendeiroCV.MainFlow.Home.mvc$translationsResources", "BRendeiroCV.MainFlow.Home.mvc$debugger", "BRendeiroCV.MainFlow.controller", "BRendeiroCV.MainFlow.Home.mvc$controller.OnReady.globalseo_jsJS"], function (OutSystems, BRendeiroCVModel, BRendeiroCVController, BRendeiroCVLanguageResources, BRendeiroCVClientVariables, BRendeiroCV_MainFlow_Home_mvc_TranslationsResources, BRendeiroCV_MainFlow_Home_mvc_Debugger, BRendeiroCV_MainFlowController, BRendeiroCV_MainFlow_Home_mvc_controller_OnReady_globalseo_jsJS) {
+define("BRendeiroCV.MainFlow.Home.mvc$controller", ["OutSystems/ClientRuntime/Main", "BRendeiroCV.model", "BRendeiroCV.controller", "BRendeiroCV.languageResources", "BRendeiroCV.clientVariables", "BRendeiroCV.MainFlow.Home.mvc$translationsResources", "BRendeiroCV.MainFlow.Home.mvc$debugger", "BRendeiroCV.MainFlow.controller", "BRendeiroCV.MainFlow.Home.mvc$controller.OnReady.globalseo_jsJS", "BRendeiroCV.MainFlow.Home.mvc$controller.OnReady.JavaScript1JS"], function (OutSystems, BRendeiroCVModel, BRendeiroCVController, BRendeiroCVLanguageResources, BRendeiroCVClientVariables, BRendeiroCV_MainFlow_Home_mvc_TranslationsResources, BRendeiroCV_MainFlow_Home_mvc_Debugger, BRendeiroCV_MainFlowController, BRendeiroCV_MainFlow_Home_mvc_controller_OnReady_globalseo_jsJS, BRendeiroCV_MainFlow_Home_mvc_controller_OnReady_JavaScript1JS) {
 var OS = OutSystems.Internal;
 var Controller = (function (_super) {
 __extends(Controller, _super);
@@ -1080,7 +1093,7 @@ varBag.idService = idService;
 controller.ensureControllerAlive("OnReady");
 callContext = controller.callContext(callContext);
 varBag.callContext = callContext;
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:45RsJEBlD02fiLXazIIM2g:/NRWebFlows.fWtJs57lI0qCTlwkcDoxDA/NodesShownInESpaceTree.mBXFEt0B4kuDr1qdLfxSvw/ClientActions.45RsJEBlD02fiLXazIIM2g:MY4U9_gCkygp1pr9DmUXCA", "BRendeiroCV", "OnReady", "NRFlows.ClientScreenActionFlow", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:45RsJEBlD02fiLXazIIM2g:/NRWebFlows.fWtJs57lI0qCTlwkcDoxDA/NodesShownInESpaceTree.mBXFEt0B4kuDr1qdLfxSvw/ClientActions.45RsJEBlD02fiLXazIIM2g:iQzKLK45F0EE3y5raW5IaQ", "BRendeiroCV", "OnReady", "NRFlows.ClientScreenActionFlow", callContext.id, varBag);
 OutSystemsDebugger.handleBreakpoint("g9ft1tpO+kSkuYaBgMIb5w:pd+BSPOtT0yvJgmExr4yhg", callContext.id);
 return OS.Flow.executeAsyncFlow(function () {
 OutSystemsDebugger.handleBreakpoint("g9ft1tpO+kSkuYaBgMIb5w:YpzwacL6RUS6TWMrlzBfHw", callContext.id);
@@ -1090,6 +1103,9 @@ OutSystemsDebugger.handleBreakpoint("g9ft1tpO+kSkuYaBgMIb5w:IdpLWG1lWkukdRLH12wE
 // Execute Action: UpdateViewByIp
 model.flush();
 return controller.updateViewByIp$ServerAction(BRendeiroCVClientVariables.getClientGuid(), callContext).then(function () {
+OutSystemsDebugger.handleBreakpoint("g9ft1tpO+kSkuYaBgMIb5w:phkbopXoQUW+TLRMifAr6A", callContext.id);
+controller.safeExecuteJSNode(BRendeiroCV_MainFlow_Home_mvc_controller_OnReady_JavaScript1JS, "JavaScript1", "OnReady", null, function ($parameters) {
+}, {}, {});
 OutSystemsDebugger.handleBreakpoint("g9ft1tpO+kSkuYaBgMIb5w:fPTIZcGHXk2WhbPCbvjUgA", callContext.id);
 // IsReady = True
 model.variables.isReadyVar = true;
@@ -1196,7 +1212,7 @@ return controller.safeExecuteClientAction(controller._popUp_Donwload$Action, cal
 Controller.prototype.pushDebuggerContext = function (callContext) {
 var varBag = {};
 OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:fWtJs57lI0qCTlwkcDoxDA:/NRWebFlows.fWtJs57lI0qCTlwkcDoxDA:l_PFc9BB4g74My60JSlEkw", "BRendeiroCV", "MainFlow", "NRFlows.WebFlow", callContext.id, varBag);
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:mBXFEt0B4kuDr1qdLfxSvw:/NRWebFlows.fWtJs57lI0qCTlwkcDoxDA/NodesShownInESpaceTree.mBXFEt0B4kuDr1qdLfxSvw:qa43C36MmIBY+Ou3jasLJA", "BRendeiroCV", "Home", "NRNodes.WebScreen", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:mBXFEt0B4kuDr1qdLfxSvw:/NRWebFlows.fWtJs57lI0qCTlwkcDoxDA/NodesShownInESpaceTree.mBXFEt0B4kuDr1qdLfxSvw:EZ2Zf+uqqWCJ7V2l3_+y6g", "BRendeiroCV", "Home", "NRNodes.WebScreen", callContext.id, varBag);
 };
 Controller.prototype.popDebuggerContext = function (callContext) {
 OutSystemsDebugger.pop("g9ft1tpO+kSkuYaBgMIb5w:mBXFEt0B4kuDr1qdLfxSvw", callContext.id);
@@ -1258,12 +1274,19 @@ return function ($actions, $roles, $public) {
     script.setAttribute('data-use-browser-language', 'true');
     script.setAttribute('data-original-language', 'pt');
     script.setAttribute('data-translation-mode', 'searchParams');
-    script.setAttribute('data-allowed-languages', 'en');
+    script.setAttribute('data-allowed-languages', 'en, es');
     script.setAttribute('data-exclude-classes', '');
     head.appendChild(script);
   }
 })();
 
+};
+});
+define("BRendeiroCV.MainFlow.Home.mvc$controller.OnReady.JavaScript1JS", [], function () {
+return function ($actions, $roles, $public) {
+setTimeout(function() {
+  
+}, 2000);
 };
 });
 
@@ -1273,6 +1296,11 @@ var metaInfo = {
 "YpzwacL6RUS6TWMrlzBfHw": {
 getter: function (varBag, idService) {
 return varBag.globalseo_jsJSResult.value;
+}
+},
+"phkbopXoQUW+TLRMifAr6A": {
+getter: function (varBag, idService) {
+return varBag.javaScript1JSResult.value;
 }
 },
 "wphqBo2PK0aR9J64CGyWJQ": {

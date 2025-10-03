@@ -166,7 +166,7 @@ extendedProperties: {
 alt: "",
 style: "height: 32px;"
 },
-image: OS.Navigation.VersionedURL.getVersionedUrl("img/BRendeiroCV.Logo.png"),
+image: OS.Navigation.VersionedURL.getVersionedUrl("img/BRendeiroCV.logo_BR_optimized.jpg"),
 style: "app-logo",
 type: /*Static*/ 0,
 _idProps: {
@@ -242,8 +242,8 @@ return controller.safeExecuteClientAction(controller._onClick$Action, callContex
 // Event Handler Actions
 Controller.prototype.pushDebuggerContext = function (callContext) {
 var varBag = {};
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:B4kRGvrnOEmQonA8ir4Pyg:/NRWebFlows.B4kRGvrnOEmQonA8ir4Pyg:tqNLB+Jupzy+4vlkl_Ke+g", "BRendeiroCV", "Common", "NRFlows.WebFlow", callContext.id, varBag);
-OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:IRImmTFW6k23AYApKoopvw:/NRWebFlows.B4kRGvrnOEmQonA8ir4Pyg/NodesShownInESpaceTree.IRImmTFW6k23AYApKoopvw:NSzOztOzpbgo0ExFUsR3qA", "BRendeiroCV", "ApplicationTitle", "NRNodes.WebBlock", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:B4kRGvrnOEmQonA8ir4Pyg:/NRWebFlows.B4kRGvrnOEmQonA8ir4Pyg:ivuksxjiFREeoaJTHRjeGA", "BRendeiroCV", "Common", "NRFlows.WebFlow", callContext.id, varBag);
+OutSystemsDebugger.push("g9ft1tpO+kSkuYaBgMIb5w:IRImmTFW6k23AYApKoopvw:/NRWebFlows.B4kRGvrnOEmQonA8ir4Pyg/NodesShownInESpaceTree.IRImmTFW6k23AYApKoopvw:eIBY9Ttr3NtNCHgfFUpXCQ", "BRendeiroCV", "ApplicationTitle", "NRNodes.WebBlock", callContext.id, varBag);
 };
 Controller.prototype.popDebuggerContext = function (callContext) {
 OutSystemsDebugger.pop("g9ft1tpO+kSkuYaBgMIb5w:IRImmTFW6k23AYApKoopvw", callContext.id);
